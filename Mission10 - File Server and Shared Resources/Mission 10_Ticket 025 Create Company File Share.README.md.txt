@@ -1,0 +1,91 @@
+# Mission 10 - Ticket 025: Create Company File Share
+
+## Category
+File Server Administration
+
+## Priority
+Medium
+
+---
+
+## Request
+
+Create a centralized directory structure on the organization's file server to prepare for departmental file sharing. The folder hierarchy will serve as the foundation for configuring SMB shares, NTFS permissions, and department-specific access controls in subsequent tasks.
+
+---
+
+## Analysis
+
+The organization requires a standardized location for departmental data. Before implementing shared folders and access controls, an organized directory structure must be created to support future security configuration and file management.
+
+Creating the folder hierarchy first allows permissions and network shares to be configured consistently while maintaining a scalable structure for additional departments or resources.
+
+---
+
+## Resolution
+
+Created a root directory named **CompanyShares** on the C: drive of **DC01**.
+
+Within the root directory, created the following departmental folders:
+
+- HR
+- Finance
+- IT
+- Sales
+- Marketing
+- Operations
+
+Verified that the folder structure was successfully created and organized according to organizational requirements.
+
+---
+
+## Verification
+
+Confirmed that:
+
+- The **CompanyShares** root directory exists.
+- All six departmental folders were successfully created.
+- Folder names follow a consistent naming convention.
+- The directory structure is ready for SMB share configuration and permission assignment.
+
+---
+
+## Evidence Collected
+
+### Screenshot
+
+**01_CompanyShares_Folder_Structure.png**
+
+Displays:
+
+- C:\CompanyShares
+- HR
+- Finance
+- IT
+- Sales
+- Marketing
+- Operations
+
+---
+
+## Skills Demonstrated
+
+- Windows Server Administration
+- File Server Preparation
+- Directory Structure Design
+- File System Organization
+- Windows File Explorer Management
+- Administrative Planning
+- Documentation
+
+---
+
+## Lesson Learned
+
+A well-planned directory structure provides the foundation for secure and scalable file server administration. Establishing an organized hierarchy before configuring shares and permissions simplifies future management and helps maintain consistency across departmental resources.
+
+---
+
+## Reflection
+
+This ticket represents the first stage of deploying a centralized file server within the Active Directory environment. While the task itself was straightforward, it established the structure required for implementing SMB shares, NTFS permissions, and access controls in later tickets. Careful planning at this stage helps reduce administrative overhead and supports a more maintainable file-sharing environment.

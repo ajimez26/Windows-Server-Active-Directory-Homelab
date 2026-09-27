@@ -1,0 +1,94 @@
+# Mission 10 - Ticket 026: Configure SMB Share & Share Permissions
+
+## Category
+
+File Server Administration
+
+## Priority
+
+High
+
+---
+
+## Request
+
+Configure the **CompanyShares** directory as a centralized SMB network share, allowing authenticated domain users to connect while preparing the environment for department-specific access control through NTFS permissions.
+
+---
+
+## Analysis
+
+To provide users with centralized access to departmental resources, the **CompanyShares** directory needed to be published as an SMB share. Following Windows Server best practices, Share Permissions were configured broadly while detailed access control will be managed through NTFS permissions in later tasks.
+
+This approach simplifies administration by allowing Share Permissions to control network access and NTFS permissions to control file and folder access.
+
+---
+
+## Resolution
+
+Created an SMB share named **CompanyShares** using the **Create A Shared Folder Wizard** in Computer Management.
+
+Configured the following settings:
+
+- Share Name: **CompanyShares**
+- Local Path: **C:\CompanyShares**
+- Description: **Central departmental file share**
+- Offline Files: Disabled
+
+Configured Share Permissions by:
+
+- Removing the **Everyone** group
+- Adding **Authenticated Users**
+- Granting **Full Control**
+
+Successfully completed the Share Folder Wizard and verified that the share was published.
+
+---
+
+## Verification
+
+Verified that:
+
+- The **CompanyShares** SMB share appears under **Computer Management → Shared Folders → Shares**.
+- The share points to the correct local directory.
+- Authenticated Users have Share-level access.
+- The share is ready for NTFS permission configuration.
+
+---
+
+## Evidence Collected
+
+### Screenshot
+
+**02_CompanyShares_SMB_Share.png**
+
+Displays:
+
+- Computer Management
+- Shared Folders
+- Shares
+- CompanyShares
+- Local path (C:\CompanyShares)
+
+---
+
+## Skills Demonstrated
+
+- Windows Server Administration
+- SMB Share Configuration
+- Share Permission Management
+- Windows Computer Management
+- Network File Sharing
+- Administrative Documentation
+
+---
+
+## Lesson Learned
+
+Share Permissions determine whether users can access a shared folder across the network, while NTFS Permissions determine what actions users can perform once connected. Using broad Share Permissions and granular NTFS Permissions creates a simpler and more maintainable security model.
+
+---
+
+## Reflection
+
+This ticket established the organization's first centralized SMB file share within the Active Directory environment. Publishing the CompanyShares directory provides the foundation for secure departmental file sharing, with detailed access controls to be implemented through NTFS permissions in the next phase of the deployment.
